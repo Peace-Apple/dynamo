@@ -23,16 +23,9 @@ export class DynamicFormComponent implements OnInit {
   }
 
   createGroup() {
-    // const group = this.fb.group({});
-    console.log('za config-------', this.config)
-    // this.config?this.config.forEach(control =&gt; group.addControl(control.name, this.fb.control())) : null;
-
-    // return group;
     for(let config of this.config){
       this.userGroup[config.name] = new FormControl(config.value || '')
     }
-    console.log('the user grup-------', this.userGroup)
     this.form = new FormGroup(this.userGroup);
-    console.log('form vals--------', this.form.value)
   }
 }
